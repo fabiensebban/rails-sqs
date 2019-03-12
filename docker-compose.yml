@@ -1,0 +1,34 @@
+version: '2'
+services:
+  db:
+    image: mariadb:10.3.13
+    restart: always
+    ports:
+      - 3306:3306
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+  app:
+    build:
+      context : .
+      dockerfile: Dockerfile-rails
+    command: rails s -b 0.0.0.0 -p 3000
+    tty: true
+    volumes:
+      - .:/app
+    ports:
+      - 3000:3000
+    environment: &environment
+      MYSQL_ROOT_PASSWORD: root
+    depends_on:
+      - db
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile-nginx
+    volumes:
+      - ./docker/nginx/sslfiles:/etc/nginx/sslfiles
+    links:
+      - app
+    ports:
+      - "80:80"
+      - "443:443"
