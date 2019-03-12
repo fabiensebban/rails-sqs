@@ -29,7 +29,7 @@
   "containerDefinitions": [
     {
       "name": "app",
-      "image": "[App Image URL]:latest",
+      "image": "906249606050.dkr.ecr.eu-west-3.amazonaws.com/rails-sqs_app:latest",
       "essential": true,
       "memory": 128,
       "portMappings": [
@@ -48,7 +48,7 @@
     },
     {
       "name": "web",
-      "image": "[Web Image URL]:latest",
+      "image": "906249606050.dkr.ecr.eu-west-3.amazonaws.com/rails-sqs_web:latest",
       "environment": [
         {
           "name": "Container",
