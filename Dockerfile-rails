@@ -33,7 +33,7 @@ COPY ./docker /docker
 # This scripts runs `rake db:create` and `rake db:migrate` before
 # running the command given
 # This also remove the tmp/pids/server.pid file to be sure that no server is running
-ENTRYPOINT ["docker/rails/docker-entrypoint.sh"]
+ENTRYPOINT ["../docker/rails/docker-entrypoint.sh"]
 
 EXPOSE 3000
 
