@@ -25,10 +25,10 @@ RUN gem install bundler
 RUN bundle install
 
 # Now copy the application code to the application directory
-COPY ./rails-app /app
+COPY rails-app /app
 
 # And copy the docker config
-COPY ./docker /docker
+COPY docker /docker
 
 # This scripts runs `rake db:create` and `rake db:migrate` before
 # running the command given
