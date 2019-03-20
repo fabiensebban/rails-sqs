@@ -1,5 +1,5 @@
 class SecondJob < ApplicationJob
-  queue_as :rails-sqs
+  queue_as :rails_sqs
 
   def perform(*args)
     raise "This is the second job "
