@@ -1,5 +1,5 @@
 version: 1
 cron:
  - name: "FirstJob"
-   url: "/"
+   url: "/first"
    schedule: "*/1 * * * *"
