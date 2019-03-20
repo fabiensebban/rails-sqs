@@ -18,14 +18,14 @@ RUN echo 'gem: --no-ri --no-rdoc' > ~/.gemrc
 # If we copy the whole app directory, the bundle would install
 # everytime an application file changed. Copying the Gemfiles first
 # avoids this and installs the bundle only when the Gemfile changed.
-COPY Gemfile Gemfile
-COPY Gemfile.lock Gemfile.lock
+COPY rails-app/Gemfile Gemfile
+COPY rails-app/Gemfile.lock Gemfile.lock
 RUN gem install bundler
 # RUN bundle install --jobs 20 --retry 5
 RUN bundle install
 
 # Now copy the application code to the application directory
-COPY . /app
+COPY ./rails-app /app
 
 # This scripts runs `rake db:create` and `rake db:migrate` before
 # running the command given
