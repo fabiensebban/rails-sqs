@@ -6,7 +6,7 @@ RUN apt-get update -qq && \
 	rm -rf /var/lib/apt/lists/*
 
 # Set the root of your Rails application
-ENV RAILS_ROOT /var/app
+ENV RAILS_ROOT /app
 RUN mkdir -p $RAILS_ROOT
 
 # Set working directory to the root path of the Rails app
@@ -25,7 +25,7 @@ RUN gem install bundler
 RUN bundle install
 
 # Now copy the application code to the application directory
-COPY rails-app $RAILS_ROOT
+COPY rails-app /app
 
 # And copy the docker config
 COPY docker /docker
