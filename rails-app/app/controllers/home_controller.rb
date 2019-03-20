@@ -1,6 +1,11 @@
 class HomeController < ApplicationController
   def index
-    FirstJob.perform_later 'test-first'
+    test = {
+      key1: 'value1',
+      key2: 'value2'
+    }
+
+    FirstJob.perform_later test
   end
 
   def test
