@@ -25,6 +25,13 @@ gem 'bootsnap', '>= 1.4.1', require: false
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 # gem 'rack-cors'
 
+# Active elastic jobs
+gem 'active_elastic_job'
+
+# gem for log error in slack
+gem 'exception_notification', '~> 4.3'
+gem 'slack-notifier', '~> 2.3', '>= 2.3.2'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

@@ -24,6 +24,11 @@ module RailsSqs
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.0
 
+    # Slack notifications
+    config.middleware.use ExceptionNotification::Rack,
+                          slack: {
+                              webhook_url: ENV['SLACK_ERROR_WEBHOOK_URL']
+                          }
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded after loading
