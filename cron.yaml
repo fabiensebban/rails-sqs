@@ -1,8 +1,5 @@
 version: 1
 cron:
  - name: "FirstJob"
-   url: "/home/index"
-   schedule: "*/1 * * * *"
- - name: "SecondJob"
-   url: "/home/test"
+   url: "/test"
    schedule: "*/1 * * * *"

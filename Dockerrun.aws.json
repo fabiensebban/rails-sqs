@@ -4,7 +4,7 @@
     {
       "name": "app",
       "host": {
-        "sourcePath": "/var/app/current/rails-app"
+        "sourcePath": "/var/app/current"
       }
     },
     {
@@ -41,8 +41,7 @@
       "mountPoints": [
         {
           "sourceVolume": "app",
-          "containerPath": "/var/www/html",
-          "readOnly": true
+          "containerPath": "/var/www/app"
         }
       ]
     },

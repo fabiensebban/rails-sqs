@@ -6,7 +6,7 @@ RUN apt-get update -qq && \
 	rm -rf /var/lib/apt/lists/*
 
 # Set the root of your Rails application
-ENV RAILS_ROOT /app
+ENV RAILS_ROOT /var/www/app
 RUN mkdir -p $RAILS_ROOT
 
 # Set working directory to the root path of the Rails app
@@ -18,22 +18,19 @@ RUN echo 'gem: --no-ri --no-rdoc' > ~/.gemrc
 # If we copy the whole app directory, the bundle would install
 # everytime an application file changed. Copying the Gemfiles first
 # avoids this and installs the bundle only when the Gemfile changed.
-COPY rails-app/Gemfile Gemfile
-COPY rails-app/Gemfile.lock Gemfile.lock
+COPY Gemfile Gemfile
+COPY Gemfile.lock Gemfile.lock
 RUN gem install bundler
 # RUN bundle install --jobs 20 --retry 5
 RUN bundle install
 
 # Now copy the application code to the application directory
-COPY rails-app /app
-
-# And copy the docker config
-COPY docker /docker
+COPY . $RAILS_ROOT
 
 # This scripts runs `rake db:create` and `rake db:migrate` before
 # running the command given
 # This also remove the tmp/pids/server.pid file to be sure that no server is running
-ENTRYPOINT ["../docker/rails/docker-entrypoint.sh"]
+ENTRYPOINT ["docker/rails/docker-entrypoint.sh"]
 
 EXPOSE 3000
 
