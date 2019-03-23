@@ -1,4 +1,16 @@
 version: 0.2
+
+phases:
+  install:
+    commands:
+      - gem install rspec
+  pre-build:
+    commands:
+      - chmod 755 docker/rails/docker-entrypoint.sh
+  build:
+    commands:
+      - echo "Starting build"
+      - rspec | tee rspec_output.log
 artifacts:
   files:
     - '**/*'
