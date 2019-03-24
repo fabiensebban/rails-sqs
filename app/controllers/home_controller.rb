@@ -7,6 +7,7 @@ class HomeController < ApplicationController
   end
 
   def catchall
+    my_log = Logger.new("#{Rails.root}/log/my_catchall_controller.log")
     params.each do |key,value|
       my_log.warn "Param #{key}: #{value}"
     end
