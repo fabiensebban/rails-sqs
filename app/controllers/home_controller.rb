@@ -8,6 +8,7 @@ class HomeController < ApplicationController
 
   def catchall
     my_log = Logger.new("#{Rails.root}/log/my_catchall_controller.log")
+    my_log.info(request.remote_ip)
     params.each do |key,value|
       my_log.warn "Param #{key}: #{value}"
     end
