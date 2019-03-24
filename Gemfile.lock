@@ -165,7 +165,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  active_elastic_job
+  active_elastic_job (~> 2.0, >= 2.0.1)
   bootsnap (>= 1.4.1)
   byebug
   exception_notification (~> 4.3)
