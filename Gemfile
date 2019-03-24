@@ -26,7 +26,7 @@ gem 'bootsnap', '>= 1.4.1', require: false
 # gem 'rack-cors'
 
 # Active elastic jobs
-gem 'active_elastic_job'
+gem 'active_elastic_job', '~> 2.0', '>= 2.0.1'
 
 # gem for log error in slack
 gem 'exception_notification', '~> 4.3'
