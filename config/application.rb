@@ -48,6 +48,9 @@ module RailsSqs
     # Skip views, helpers and assets when generating a new resource.
     config.api_only = true
 
+    # Queue service is SQS throw active elastic job gem
+    # Here is the configuration :
+    config.active_job.queue_adapter = :active_elastic_job
     config.active_elastic_job.secret_key_base = ENV['SECRET_KEY_BASE']
   end
 end
