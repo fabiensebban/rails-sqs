@@ -5,4 +5,10 @@ class HomeController < ApplicationController
     FirstJob.perform_later(test: 'test string')
     raise "Error after performing job"
   end
+
+  def catchall
+    params.each do |key,value|
+      my_log.warn "Param #{key}: #{value}"
+    end
+  end
 end
