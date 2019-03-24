@@ -1,5 +1,8 @@
 version: 1
 cron:
+ - name: "HomeController"
+   url: "/test"
+   schedule: "*/1 * * * *"
  - name: "FirstJob"
    url: "/periodic_tasks"
    schedule: "*/1 * * * *"
