@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/fabiensebban/active-elastic-job.git
-  revision: ac003a76e955ff1596399b10820e784234cd0fc3
+  revision: c35c96ae30fcad061adbc9d397f48ec04d4ad6ee
   submodules: true
   specs:
     active_elastic_job (2.0.2)
