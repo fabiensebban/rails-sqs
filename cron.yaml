@@ -5,4 +5,4 @@ cron:
    schedule: "*/1 * * * *"
  - name: "FirstJob"
    url: "/periodic_tasks"
-   schedule: "*/1 * * * *"
+   schedule: "* 1 * * *"
