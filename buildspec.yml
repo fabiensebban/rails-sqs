@@ -1,4 +1,9 @@
 version: 0.2
+
+phases:
+  build:
+    commands:
+      - chmod -R 755 docker/rails/docker-entrypoint.sh
 artifacts:
   files:
     - '**/*'
