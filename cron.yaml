@@ -2,4 +2,4 @@ version: 1
 cron:
  - name: "FirstJob"
    url: "/periodic_tasks"
-   schedule: "*/1 * * * *"
+   schedule: "* 1 * * *"
